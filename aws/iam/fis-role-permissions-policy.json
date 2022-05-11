@@ -1,0 +1,53 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:RebootInstances",
+                "ec2:TerminateInstances",
+                "ec2:StartInstances",
+                "ec2:SendSpotInstanceInterruptions",
+                "fis:InjectApiUnavailableError",
+                "ec2:StopInstances",
+                "fis:InjectApiInternalError",
+                "fis:InjectApiThrottleError"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:fis:*:*:experiment/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:SendCommand",
+                "iam:PassRole",
+                "ssm:StartAutomationExecution"
+            ],
+            "Resource": [
+                "arn:aws:ssm:*:*:automation-definition/*:*",
+                "arn:aws:ssm:*:*:document/*",
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:iam::*:role/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:CancelCommand",
+                "ssm:GetAutomationExecution",
+                "logs:CreateLogDelivery",
+                "logs:PutResourcePolicy",
+                "ssm:ListCommands",
+                "logs:DescribeLogGroups",
+                "s3:PutBucketPolicy",
+                "sts:GetCallerIdentity",
+                "s3:GetBucketPolicy",
+                "ssm:StopAutomationExecution",
+                "logs:DescribeResourcePolicies"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

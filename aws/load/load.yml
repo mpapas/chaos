@@ -1,0 +1,14 @@
+config:
+  target: "http://<load balancer endpoint DNS>"
+  phases:
+    - duration: 240
+      arrivalRate: 1
+      rampTo: 1
+      name: Constant ping
+scenarios:
+  - name: Test 1
+    flow:
+      - get:
+          url: "/"
+    expect:
+      - statusCode: 200
