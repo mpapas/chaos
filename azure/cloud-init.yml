@@ -1,0 +1,14 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - htop
+  - apache2
+write_files:
+  - content: |
+      Hello from the app!
+    path: /var/www/html/index.html
+    permissions: '0755'
+runcmd:
+  - systemctl start apache2.service
+  - systemctl enable apache2.service
+  - systemctl restart apache2.service
