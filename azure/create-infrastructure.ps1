@@ -16,7 +16,7 @@ $PublicIPName=Get-ResourceName $Delimeter $Prefix $GeneratedValue 'publicip'
 $LoadBalancerFrontEndIpName='frontendpool'
 $LoadBalancerBackEndPoolName='backendpool'
 $AvailabilitySetName='myAvailabilitySet'
-$MyIP='67.167.197.28/32'
+$MyIP=''
 
 # Create resource group
 # az group create `
