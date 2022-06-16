@@ -1,10 +1,7 @@
 . "..\..\shared\common-functions.ps1"
+. "..\..\shared\common-variables.ps1"
 
 # Variables
-$Prefix='cea'
-$Delimeter='-'
-$GeneratedValue=Get-ShortId(Get-Random)
-$Alias="<your alias>"
 $OwnerTag="Key=Owner,Value=$Alias"
 $VpcName=Get-ResourceName $Delimeter $Prefix $GeneratedValue 'vpc'
 $LoadBalancerName=Get-ResourceName $Delimeter $Prefix $GeneratedValue 'lb'
@@ -14,7 +11,6 @@ $WebServerName=Get-ResourceName $Delimeter $Prefix $GeneratedValue 'ws'
 $VpcCidrBlock='10.0.0.0/16'
 $Subnet1CidrBlock='10.0.0.0/20'
 $Subnet2CidrBlock='10.0.16.0/20'
-$MyIP='67.167.197.28/32'
 $SshKeyName='<your keypair name for connecting to EC2 instances>'
 
 # Create VPC

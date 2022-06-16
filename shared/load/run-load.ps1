@@ -1,4 +1,4 @@
 <#
 https://www.artillery.io/
 #>
-artillery run .\load.yml
+artillery run .\light-load.yml

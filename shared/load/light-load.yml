@@ -1,0 +1,14 @@
+config:
+  target: "http://<load balancer endpoint DNS or IP>"
+  phases:
+    - duration: 240
+      arrivalRate: 3
+      rampTo: 3
+      name: Light load (3 requests/sec)
+scenarios:
+  - name: Test 1
+    flow:
+      - get:
+          url: "/"
+    expect:
+      - statusCode: 200

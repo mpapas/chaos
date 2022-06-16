@@ -1,10 +1,7 @@
 . "..\..\shared\common-functions.ps1"
+. "..\..\shared\common-variables.ps1"
 
 # Variables
-$Prefix='cea'
-$Delimeter='-'
-$GeneratedValue=Get-ShortId(Get-Random)
-$Alias="<your alias>"
 $Tags="Owner=$Alias"
 $Location='centralus'
 $ResourceGroupName=Get-ResourceName $Delimeter $Prefix $GeneratedValue 'rg'
@@ -16,13 +13,12 @@ $PublicIPName=Get-ResourceName $Delimeter $Prefix $GeneratedValue 'publicip'
 $LoadBalancerFrontEndIpName='frontendpool'
 $LoadBalancerBackEndPoolName='backendpool'
 $AvailabilitySetName='myAvailabilitySet'
-$MyIP=''
 
 # Create resource group
-# az group create `
-#     --name $ResourceGroupName `
-#     --location $Location `
-#     --tags $Tags
+az group create `
+    --name $ResourceGroupName `
+    --location $Location `
+    --tags $Tags
 
 # Create vnet
 $VNetId=$(az network vnet create `

@@ -1,9 +1,7 @@
 . "..\..\shared\common-functions.ps1"
+. "..\..\shared\common-variables.ps1"
 
-$Prefix='cesxs'
-$Delimeter='-'
-$GeneratedValue=Get-ShortId(Get-Random)
-$Alias="<your alias>"
+# Variables
 $OwnerTag="Key=Owner,Value=$Alias"
 $AwsFisExperimentRoleName=Get-ResourceName $Delimeter $Prefix $GeneratedValue 'fis-role'
 $AwsFisExperimentPolicyName=Get-ResourceName $Delimeter $Prefix $GeneratedValue 'fis-policy'
